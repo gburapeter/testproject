@@ -28,7 +28,7 @@ Route::get('/asd', function () {
 
 
 /**
- * 
+ *
  * THIS IS A SOLUTION WITHOUT GROUPING!!!!!!!!!
  */
 // Route::get('/people', [PeopleController::class, 'index']
@@ -48,6 +48,7 @@ Route::get('/asd', function () {
  * STORE POST METHOD TO CREATE A NEW ONE
  */
 
+// Route::resource('people', PeopleController::class)->middleware('admin');
 Route::resource('people', PeopleController::class)->middleware('auth');
 Route::resource('food', FoodController::class);
 // Route::get('/people/{id}',[PeopleController::class, 'show']);

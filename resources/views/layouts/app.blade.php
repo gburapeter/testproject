@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
@@ -27,6 +27,8 @@
 
                     <a href=" {{ route('people.create') }}" class="text-lg font-semibold text-gray-100 no-underline">Create People </a>
                     <a href=" {{ route('food.index') }}" class="text-lg font-semibold text-gray-100 no-underline">Food </a>
+
+
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest

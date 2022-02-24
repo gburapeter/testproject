@@ -10,7 +10,7 @@
             </div>
         @endif
 
-        
+
 
         <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 

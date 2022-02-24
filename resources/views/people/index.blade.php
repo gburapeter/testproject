@@ -7,16 +7,25 @@
     <p>{{ $price }}</p>
     @if ($price>5)
     <p>Price bigger than 5</p>
-        
+
     @else
     <p>Price lower than 5</p>
 
 
-        
+
     @endif --}}
 
-  
+    @can('viewAny', App\Models\People::class)
+<p>the new admin is working</p>
+     @endcan
+@can('admin')
+<p>OLD ADMIN</p>
+@endcan
 
+@admin
+<p>STILL ADMIN BUT DIFF</p>
+@endadmin
+ONLY YES
 
 <div class="flex-center position-ref full-height">
     <div class="content">
@@ -29,22 +38,22 @@
 @endif
         </div>
         <img src="/img/fire.png" alt="Girl in a jacket">
-        
+
     @foreach ($people as $p)
     <a href="{{  route('people.show', [$p]) }}">
-       
+
         {{-- <a href="/people/{{ $p->id }}" --}}
     <div class="people-content">
        <p>{{ $p->id }}</p>
     <p>Name: {{ $p->name }}</p>
     <p>Country: {{ $p->country }}</p>
     <p>Age: {{ $p->age}}</p>
-    <a 
+    <a
     class="border-b-2 pb-2 border-dotted italic text-green-500"
     href="{{  route('people.edit', [$p]) }}">
     Edit &rarr;
 </a>
-    
+
     </a>
 </div>
 @endforeach

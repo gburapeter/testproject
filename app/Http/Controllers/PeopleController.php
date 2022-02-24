@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\People;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PeopleController extends Controller
 {
@@ -14,8 +15,14 @@ class PeopleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->authorizeResource(People::class, 'person');
+    }
     public function index()
     {
+
         $people = People::paginate(1);
 
         // $people = People::orderBy('name')->get();
